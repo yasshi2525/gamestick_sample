@@ -32,7 +32,7 @@ function main(_param: g.GameMainParameterObject ): void {
 			{ x: 50, y: g.game.height - gameStickBackSize - 50, width: gameStickBackSize, height: gameStickBackSize },
 			{ width: gameStickSize, height: gameStickSize },
 			(offset) => {
-				const speed = 10
+				const speed = 10;
 				let dx = Math.round(offset.x * speed);
 				let dy = Math.round(offset.y * speed);
 				if (player.x + dx < 0 || player.x + dx > g.game.width) {
@@ -52,7 +52,13 @@ function main(_param: g.GameMainParameterObject ): void {
 	g.game.pushScene(scene);
 }
 
-function createGameStickEntity(scene: g.Scene, image: g.ImageAsset, area: g.CommonArea, size: g.CommonSize, func:(point: g.CommonOffset) => void): g.E {
+function createGameStickEntity(
+	scene: g.Scene,
+	image: g.ImageAsset,
+	area: g.CommonArea,
+	size: g.CommonSize,
+	func: (point: g.CommonOffset) => void
+): g.E {
 	const width = area.width > size.width ? area.width : size.width;
 	const height = area.height > size.height ? area.height : size.height;
 	const entity = new g.E({

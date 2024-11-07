@@ -26,7 +26,7 @@ module.exports = [
       sourceType: "module",
 
       parserOptions: {
-        project: ["tsconfig.json", "tsconfig.jest.json"],
+        project: ["tsconfig.json"],
       },
     },
 
