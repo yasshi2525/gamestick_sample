@@ -24,8 +24,8 @@ function main(_param: g.GameMainParameterObject ): void {
 		});
 		scene.append(player);
 
-		const gameStickBackSize = 150;
-		const gameStickSize = 100;
+		const gameStickBackSize = 150; // バーチャルスティックの影の１辺の大きさ
+		const gameStickSize = 100; // バーチャルスティック自体の１辺の大きさ
 		const gameStick = createGameStickEntity(
 			scene,
 			gameStickImageAsset,
@@ -35,6 +35,7 @@ function main(_param: g.GameMainParameterObject ): void {
 				const speed = 10;
 				let dx = Math.round(offset.x * speed);
 				let dy = Math.round(offset.y * speed);
+				// 場外には出ないように
 				if (player.x + dx < 0 || player.x + dx > g.game.width) {
 					dx = 0;
 				}
@@ -52,6 +53,8 @@ function main(_param: g.GameMainParameterObject ): void {
 	g.game.pushScene(scene);
 }
 
+// ゲームスティックエンティティの生成
+// 指定された画像をバーチャルスティックとして、薄くしたものを影として利用
 function createGameStickEntity(
 	scene: g.Scene,
 	image: g.ImageAsset,
@@ -106,10 +109,13 @@ function createGameStickEntity(
 		gameStick.modified();
 	});
 	gameStick.onPointUp.add(_ev => {
+		// スティックなので離されたら元の位置に戻る
 		gameStick.moveTo(gameStickInitialX, gameStickInitialY);
 		gameStick.modified();
 	});
 	gameStick.onUpdate.add(_ev => {
+		// ゲームスティックの位置に連動する動作は関数呼び出し側にお任せする
+		// こちら側でやることは、ゲームスティックの位置を-1~+1の値域に正規化したものを引数として渡すのみ
 		func({ x: (gameStick.x - gameStickInitialX) / (width / 2), y: (gameStick.y - gameStickInitialY) / (height / 2) });
 	});
 	entity.append(gameStick);
