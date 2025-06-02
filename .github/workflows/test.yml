@@ -2,6 +2,11 @@ name: test
 
 on:
   pull_request:
+  workflow_run:
+    workflows:
+      - update-snapshot
+    types:
+      - completed
 
 jobs:
   test:
