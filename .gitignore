@@ -1,6 +1,7 @@
 node_modules
 /coverage
 /lib
+/spec/__snapshots__
 /tmp
 akashic-lib.json
 *.tgz

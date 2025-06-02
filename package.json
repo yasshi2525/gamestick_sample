@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node build.js",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "test:update": "jest --updateSnapshot"
   },
   "author": "yasshi2525",
   "license": "MIT",
