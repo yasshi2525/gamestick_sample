@@ -26,6 +26,8 @@ jobs:
         run: npm test
       - name: Upload screenshots of tests
         uses: actions/upload-artifact@v4
+        # テスト結果に関わらずスクリーンショットをアップロードする
+        if: ${{ failure() || !failure() }}
         with:
           name: test-screenshots
           path: tmp/screenshot
