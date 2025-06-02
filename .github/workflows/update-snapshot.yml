@@ -21,7 +21,7 @@ jobs:
       - name: Build code
         run: npm run build
       - name: Run tests
-        run: npm test:update
+        run: npm run test:update
       - name: Commit updated snapshots
         run: |
           git config user.name "github-actions[bot]"
