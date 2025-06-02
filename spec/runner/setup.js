@@ -8,7 +8,7 @@ const SCREENSHOT_PATH = path.join(TMP_PATH, "screenshot");
 const MODULE_NAME = "@yasshi2525/simple-game-stick";
 
 const setup = async () => {
-	fs.rmSync(TMP_PATH, { recursive: true });
+	fs.rmSync(TMP_PATH, { recursive: true, force: true });
 	fs.mkdirSync(TMP_PATH, { recursive: true });
 	globalThis.TMP_PATH = TMP_PATH;
 	fs.mkdirSync(SCREENSHOT_PATH, { recursive: true });
