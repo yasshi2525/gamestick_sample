@@ -1,0 +1,41 @@
+{
+	"width": 1280,
+	"height": 720,
+	"fps": 30,
+	"main": "./script/main.js",
+	"assets": {
+		"player": {
+			"type": "image",
+			"width": 32,
+			"height": 32,
+			"path": "image/player.png"
+		},
+		"main": {
+			"type": "script",
+			"path": "script/main.js",
+			"global": true
+		},
+		"node_modules/@yasshi2525/simple-game-stick/image/game-stick.default.png": {
+			"type": "image",
+			"path": "node_modules/@yasshi2525/simple-game-stick/image/game-stick.default.png",
+			"width": 200,
+			"height": 200,
+			"global": true
+		}
+	},
+	"environment": {
+		"sandbox-runtime": "3",
+		"nicolive": {
+			"supportedModes": [
+				"single"
+			]
+		}
+	},
+	"globalScripts": [
+		"node_modules/@yasshi2525/simple-game-stick/lib/GameStickEntity.js",
+		"node_modules/@yasshi2525/simple-game-stick/lib/index.js"
+	],
+	"moduleMainScripts": {
+		"@yasshi2525/simple-game-stick": "node_modules/@yasshi2525/simple-game-stick/lib/index.js"
+	}
+}
