@@ -21,7 +21,14 @@ jobs:
       - name: Build code
         run: npm run build
       - name: Run tests
-        run: npm test:update
+        run: npm run test:update
+      - name: Upload screenshots of tests
+        uses: actions/upload-artifact@v4
+        # テスト結果に関わらずスクリーンショットをアップロードする
+        if: ${{ failure() || !failure() }}
+        with:
+          name: test-screenshots
+          path: tmp/screenshot
       - name: Commit updated snapshots
         run: |
           git config user.name "github-actions[bot]"
