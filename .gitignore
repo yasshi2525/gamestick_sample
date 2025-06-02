@@ -1,5 +1,6 @@
 node_modules
-/script
-/game
-coverage
-game.zip
+/coverage
+/lib
+/tmp
+akashic-lib.json
+*.tgz

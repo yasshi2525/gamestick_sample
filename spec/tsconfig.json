@@ -1,0 +1,11 @@
+{
+  "extends": "..",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["jest", "node"]
+  },
+  "include": [
+    "**/*.ts",
+    "../src/**/*.ts"
+  ]
+}

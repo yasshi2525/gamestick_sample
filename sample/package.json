@@ -1,0 +1,29 @@
+{
+  "name": "simple-game-stick-sample",
+  "version": "0.1.0",
+  "private": true,
+  "description": "sample akashic project using simple-game-stick for demonstration",
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "rimraf ./script && tsc && akashic scan asset script",
+    "update": "akashic scan asset && akashic scan globalScripts",
+    "start": "akashic sandbox .",
+    "export-zip": "rimraf game.zip && akashic export zip -o game.zip --nicolive",
+    "export-html": "rimraf game && akashic export html -o game"
+  },
+  "author": "yasshi2525",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "dera-",
+      "url": "https://github.com/dera-"
+    }
+  ],
+  "devDependencies": {
+    "@akashic/akashic-cli": "^3.0.6",
+    "@akashic/akashic-engine": "^3.0.0",
+    "@yasshi2525/simple-game-stick": "file:..",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  }
+}
